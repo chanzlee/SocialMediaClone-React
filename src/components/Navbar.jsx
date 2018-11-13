@@ -9,7 +9,8 @@ function Navbar() {
     display: 'inline-block',
    // background: 'red',
     width: "100vh",
-    overflow:"auto"
+    overflow:"auto",
+    paddingTop: "10px"
   }
   const link = {
     display: 'inline-block'

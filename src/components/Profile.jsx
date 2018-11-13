@@ -8,7 +8,7 @@ function Profile() {
 
   const profileStyle = {
     // background: "red",
-    width: "33%",
+    width: "100%",
     height: "400px",
     border: "grey solid 1px"
   }
