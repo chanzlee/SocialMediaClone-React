@@ -1,12 +1,12 @@
 import React from "react";
 import NavBar from "./NavBar";
-import TicketList from "./TicketList";
+import Content from "./Content";
 
 function App(){
   return (
     <div>
       <NavBar/>
-      <TicketList />
+      <Content />
     </div>
   );
 }
