@@ -1,13 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function NavbarLink(props){
+function NavbarLink(){
+    const navLinkStyle ={
+        listStyleType: "none",
+        display:"inline-block"
+    }
+    const linkStyle ={
+        listStyleType: "none",
+        display:"inline-block",
+        padding:"15px",
+        border:"solid lightgray 1px"
+        
+    
+    }
+
   return (
-    <div>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
-      <hr/>
-    </div>
+    <ul style={navLinkStyle}>
+        <li style={linkStyle}><a href="#">Home</a></li>
+        <li style={linkStyle}> <a href="#">Notifications</a></li>
+        <li style={linkStyle}> <a href="#">Messages</a></li>
+    </ul>
   );
 }
 

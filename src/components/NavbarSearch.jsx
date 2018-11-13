@@ -1,13 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function NavbarSearch(props){
+function NavbarSearch(){
+   
+    const searchBarStyle ={
+        listStyleType: "none",
+        display:"inline-block",
+        height:"35px",
+        width:"150px",
+        border:"solid lightblue 2px",
+        borderRadius: "25px",
+        fontSize: "15px"
+    }
+
   return (
-    <div>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
-      <hr/>
-    </div>
+      <form className="seach">
+      <input style={searchBarStyle} type="text"   placeholder="Search..."></input>
+      </form>
+  
   );
 }
 

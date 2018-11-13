@@ -4,6 +4,7 @@ import NavbarSearch from "./NavbarSearch";
 
 function Navbar(){
   return (
+    
     <div>
       <NavbarLink/>
       <NavbarSearch/>
