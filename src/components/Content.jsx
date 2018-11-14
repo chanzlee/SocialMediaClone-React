@@ -2,6 +2,7 @@ import React from "react";
 import Profile from "./Profile";
 import Description from "./Description";
 import TimeLine from "./TimeLine";
+import TimeLinePost from "./TimeLinePost";
 
 function Content() {
 
@@ -24,7 +25,7 @@ function Content() {
           </div>
         </div>
         <div className="col-4">
-          <TimeLine />
+          <TimeLine/>
         </div>
         <div className="col-4">
           Feed on the right
