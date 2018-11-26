@@ -4,35 +4,48 @@ import Description from "./Description";
 import TimeLine from "./TimeLine";
 import TimeLinePost from "./TimeLinePost";
 
-function Content() {
-
-  const styles = {
-    marginTop: "3%"
+class Content extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterProfileList: ["ChanTheMan", "Bee-Ryan", "Skynet", "EyeKillU"],
+      currentProfile: "WhiteDavid"
+    };
   }
 
-  const row = {
-    display: 'inline-block'
+  changeCurrentProfile(event) {
+    this.setState({ currentProfile: event.target.value});
   }
 
-  return (
+  render() {
+    const styles = {
+      marginTop: "3%"
+    };
 
-    <div style={styles}>
-      <div className="row">
-        <div className="col-4">
-          <Profile />
-          <div style={styles}>
-            <Description />
+    const row = {
+      display: "inline-block"
+    };
+    return (
+      <div style={styles}>
+        <div className="row">
+          <div className="col-4">
+            <Profile
+              masterProfileList={this.state.masterProfileList}
+              currentProfile={this.state.currentProfile}
+              changeCurrentProfile={(event) => this.changeCurrentProfile(event)}
+            />
+            <div style={styles}>
+              <Description />
+            </div>
           </div>
-        </div>
-        <div className="col-4">
-          <TimeLine/>
-        </div>
-        <div className="col-4">
-          Feed on the right
+          <div className="col-4">
+            <TimeLine />
+          </div>
+          <div className="col-4">Feed on the right</div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Content;
