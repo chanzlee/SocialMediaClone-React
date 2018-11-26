@@ -1,11 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function TimeLineFeed() {
+function TimeLineFeed(props) {
 
     const feedStyle = {
         paddingTop: "3%",
-        height: "95px",
-        border: "1px grey solid"
+        width: "100%",
+        height: "auto",
+        border: "1px grey solid",
+        wordWrap: "break-word"
     }
     
 
@@ -29,14 +32,28 @@ function TimeLineFeed() {
             </div>
             <div className="col-9" style={descStyle}>
                 <div style={titleStyle}>
-                    Lorem ipsum
+                    {props.userName}
                 </div>
                 <div >
-                    Lorem Ipsum dolor sit amet, consectectur adipiscing elit. Nullam.
-            </div>
+                    {props.content} <br></br>
+                    Likes: {props.likes} | Dislike: {props.dislikes} -  {props.date}
+                </div>
+                <div>
+                    <button onClick={props.onLikeClick}>
+                    Like
+                    </button>
+                </div>
             </div>
         </div>
     );
+}
+
+TimeLineFeed.propTypes = {
+    userName: PropTypes.string,
+    content: PropTypes.string,
+    date: PropTypes.string,
+    likes: PropTypes.number,
+    dislikes: PropTypes.number
 }
 
 
