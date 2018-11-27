@@ -23,14 +23,14 @@ function TimeLinePost(props) {
   function handleNewFeedSubmission(event) {
     event.preventDefault();
     props.addPost({
-      userName: "ChanTheMan",
       content: _content.value,
-      date: new Date().toLocaleTimeString(),
+      date: new Date(),
       likes: 0,
       dislikes: 0
     });
     _content.value = "";
   }
+
 
   return (
     <div style={otherStyle}>
@@ -55,5 +55,7 @@ function TimeLinePost(props) {
 TimeLinePost.propTypes = {
     addPost: PropTypes.func
 };
+
+
 
 export default TimeLinePost;

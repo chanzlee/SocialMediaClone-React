@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import Description from "./Description";
 import TimeLine from "./TimeLine";
 import TimeLinePost from "./TimeLinePost";
+import FriendsBar from './FriendsBar';
 
 class Content extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Content extends React.Component {
   }
 
   changeCurrentProfile(event) {
-    this.setState({ currentProfile: event.target.value});
+    this.setState({ currentProfile: event.target.value });
   }
 
   render() {
@@ -32,16 +33,18 @@ class Content extends React.Component {
             <Profile
               masterProfileList={this.state.masterProfileList}
               currentProfile={this.state.currentProfile}
-              changeCurrentProfile={(event) => this.changeCurrentProfile(event)}
+              changeCurrentProfile={event => this.changeCurrentProfile(event)}
             />
             <div style={styles}>
               <Description />
             </div>
           </div>
           <div className="col-4">
-            <TimeLine />
+            <TimeLine currentProfile={this.state.currentProfile} />
           </div>
-          <div className="col-4">Feed on the right</div>
+          <div className="col-4">
+          <FriendsBar/>
+          </div>
         </div>
       </div>
     );

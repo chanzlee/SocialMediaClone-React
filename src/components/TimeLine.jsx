@@ -27,6 +27,7 @@ class TimeLine extends React.Component {
 
   handleAddingNewFeedPost(newPost) {
     var newList = this.state.masterFeedList.slice();
+    newPost.userName = this.props.currentProfile;
     newList.push(newPost);
     this.setState({ masterFeedList: newList });
   }
